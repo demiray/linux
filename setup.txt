@@ -1,0 +1,22 @@
+xrandr -q
+xrandr --output VGA-1 --mode 1920x1080
+sudo chmod +x setres.sh
+
+sudo gpasswd -a <user> autologin
+/etc/lightdm/lightdm.conf -> autologin-user=<user>
+
+yay -S bspwm sxhxd picom nirtogen dmenu
+
+#Configuration
+#The example configuration is located in /usr/share/doc/bspwm/examples/.
+#Copy bspwmrc from there into ~/.config/bspwm/ and sxhkdrc into ~/.config/sxhkd/.
+#These two files are where you will be setting wm settings and keybindings, respectively.
+#See the bspwm(1) and sxhkd(1) manuals for detailed documentation.
+
+setxkbmap -layout tr
+xsetroot -cursor_name left_ptr
+
+nitrogen /usr/share/backgrounds
+
+sudo usermod -G vboxsf -a <user>
+sudo chown <user> /media/sf_Space
